@@ -45,7 +45,7 @@ function openapp($url,$appid,$appname) {
 		$tabL.click(function(){
 			$(".nav-list li").removeClass('active');
 		});
-		$tabL.attr("data-id",$appid).append($tabA).append($closeS).appendTo($(".tab-nav"));
+		$tabL.attr("data-id",$appid).append($tabA).append($closeS).appendTo($(".tab-nav-item"));
 		$closeS.click(function() {
 			closeApp($appid);
 		});

@@ -1,12 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!-- <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>苏州市文明城市建设测评</title>
-<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/Kiyoshi/Public/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/Kiyoshi/Public/css/style.css" /> -->
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -45,10 +37,11 @@
 	<title>系统登录</title>
 	<!-- <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" /> -->
 	<link rel="stylesheet" href="/Kiyoshi/Public/css/common.css">
-	<link rel="stylesheet" href="/Kiyoshi/Public/css/style.css">
+	<link rel="stylesheet" href="/Kiyoshi/Public/css/admin.css">	
 	<link rel="stylesheet" href="/Kiyoshi/Public/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/Kiyoshi/Static/DataTables-1.10.8/css/jquery.dataTables.css">
 	<link rel="stylesheet" href="/Kiyoshi/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/Kiyoshi/Public/css/style.css">
 	<script type="text/javascript" src="/Kiyoshi/Public/plugins/jquery-1.11.2.js"></script>
 
 </head>
@@ -62,8 +55,15 @@
 	<style>
 		body {
 			background-color: #f6f6f6;
+			background-image: url('/Kiyoshi/Public/images/soochow.jpg');
+			background-size: 100%;
 		}
 	</style>
+
+	<div style="padding: 60px;">
+		<h1 style="text-align: center; text-shadow: 2px 2px 0px #ffffff">文明城市建设测评</h1>
+	</div>
+
 	<div id="admin-log-wrapper" class="center">
 		<div class="admin-log-title">
 			 <h2>请登录</h2>	

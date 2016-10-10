@@ -1,0 +1,31 @@
+<table class="table table-border">
+	<thead>
+		<tr>
+			<th width="50" class="text-center">序号</th>
+			<th width="150" class="text-center">项目</th>
+			<foreach name="domainEntry" item="entry">
+				<th width="150" class="text-center">{$entry['domain']}</th>
+			</foreach>
+		</tr>
+	</thead>
+	<assign name="cnt" value="0"/>
+	<tbody>
+		<foreach name="itemEntry" item="vi_item">
+			<tr>
+				<td class="text-center">{$cnt++}</td>
+				<if condition="$vi_item['item'] eq 'final_score'">
+					<td class="text-center">小计</td>
+				<elseif condition="$vi_item['item'] eq 'quota'" />
+					<td class="text-center">指标分值</td>
+				<elseif condition="$vi_item['item'] eq 'pass_rate'" />
+					<td class="text-center">及格率</td>
+				<else />
+					<td class="text-center">{$vi_item['item']}</td>
+				</if>
+				<foreach name="domainEntry" item="vi_domain">
+					<td class="text-center">{$res_domain_item[$vi_domain['domain']][$vi_item['item']]}</td>
+				</foreach>
+			</tr>
+		</foreach>
+	</tbody>
+</table>

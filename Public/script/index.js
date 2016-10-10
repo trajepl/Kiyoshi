@@ -21,4 +21,7 @@ $(document).ready(function(){
 		$("#add-file-input").next().trigger('click');
 	});
 
+	$("#test-result").click(function() {
+		
+	});
 });

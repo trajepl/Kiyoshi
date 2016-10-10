@@ -1,0 +1,75 @@
+<include file="Common/header" title="数据表修改" keywords="" description=""/>
+	<link rel="stylesheet" href="__STATIC__/DataTables-1.10.8/css/jquery.dataTables.min.css">
+	<style type="text/css">
+		textarea{
+			margin-bottom: -94px;
+			border:none;
+			outline:none;
+			background: transparent;
+		}
+		div#back-home {
+    		margin: 20px auto -23px 64px;
+		}
+	</style>
+
+	<div id="back-home"> 
+		<a href="{:U('Index/dataDir')}"><i class="fa fa-backward fa-2x" aria-hidden="true"></i></a>
+	</div>
+	<div id="teacher-list">
+		<table class="info">
+			<thead>
+				<tr>
+					<th width="80" class="text-center">ID</th>
+					<th width="200" class="text-center">表项名称</th>
+					<th width="80" class="text-center">表项状态</th>
+					<th width="80" class="text-center">修改表项</th>
+					<th width="80" class="text-center">增加表项</th>
+				</tr>
+			</thead>
+			<tbody>
+				<foreach name="data" item="vi">
+					<tr>
+						<td data-field="id" class="text-center">{$vi.id}</td>
+						<td data-field="{$fields}" class="text-center">{$vi["$fields"]}</td>
+						<if condition="$vi.in_use eq 0">
+							<td data-field="in_use" class="text-center"><a class="in-use text-center" state="0" data-id="{$vi.id}" table-name="{$table}"><i class="fa fa-check-circle-o">&nbsp;&nbsp;已启用</i></a></td>	
+						<else />	
+							<td data-field="in_use" class="text-center"><a class="in-use text-center" state="1" data-id="{$vi.id}" table-name="{$table}"><i class="fa fa-ban">&nbsp;&nbsp;已停用</i></a></td>	
+						</if>
+						<td class="text-center">
+							<a class="modify-button"><i class="fa fa-pencil-square-o">&nbsp; &nbsp; 修改</i></a>
+							<a class="none modify-cancel-button"><i class="fa fa-adjust"></i></a>&nbsp;&nbsp;
+							<a class="none modify-submit-button" data-id="{$vi.id}" table-name="{$table}"><i class="fa fa-check"></i></a>&nbsp;&nbsp;
+						</td>
+						<td class="text-center">
+							<a id="add-item" table-name="{$table}" data-field="{$fields}"><i class="fa fa-plus"></i></a>
+						</td>
+					</tr>
+				</foreach>
+			</tbody>
+		</table>
+		
+	</div>
+
+	<div id="managers-addition" class="none">
+		<table id="managers-add-table" class="table table-border">
+			<tbody>
+				<tr id="major">
+					<td>添加表项内容</td>
+					<td>
+						<textarea cols="35" rows="8"></textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div id="table-addition-submit">
+			<input type="button" value="提交" class="submit">
+			<input type="reset" value="取消" class="reset">
+		</div>
+	</div>
+
+	<script type="text/javascript" charset="utf8" src="__STATIC__/DataTables-1.10.8/js/jquery.dataTables.js"></script>
+	<script src="__PUBLIC__/script/dataDir.js"></script>
+</body>
+</html>

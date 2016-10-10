@@ -1,0 +1,58 @@
+<include file="Common/header" title="测评数据报告" keywords="测评" description=""/>
+<link rel="stylesheet" href="__PUBLIC__/css/report.css">
+
+<div class="main-wrapper">
+	<div class="cover-title page">
+		<h2 id="title">苏州市{$zoneName}文明城市建设第三方测评数据报告</h2>
+		<h3>(2016年度第2次)</h3>
+		<img src="__PUBLIC__/images/soochow.jpg" class="cover-img">
+		<h3 class="dept">苏州大学社会公共文明研究所</h3>
+		<hr class="flag-line"/>
+		<h3 class="data">二零一六年七月</h3>
+	</div>
+	<div class="info page">
+		<h3>(一)&nbsp;调查背景和目的</h3>
+			<p>为持续提升{$zoneName}文明城市建设水平，按照2015年版《全国文明城市测评体系》和《全国未成年人思想道德建设工作测评体系》的要求，依据实地操作手册，{$zoneName}委托苏州大学社会公共文明研究所进行了第2016年第二次现场测评。</p>
+		<h3>(二)&nbsp;调研对象和内容</h3>
+			<p>此次调查内容主要包括社会主义
+			<foreach name="res_item" item="vi">
+			<if condition="$key eq 0">{$vi.item}<else />，{$vi.item}</if>
+			</foreach>
+			等测评项目。</p>
+		<h3>(三)&nbsp;数据处理</h3>
+			<p>问卷数据录入和图表制作主要应用Excel软件，数据分析过程使用PHP7后台分析，调查报告为Word版本。</p>
+	</div>
+	<div class="info page">
+		<h3>(四)&nbsp;全区测评得分</h3>
+		<p>全区文明程度指数和未成年人测评得分概览表</p>
+		<include file="Common/result" />
+
+		
+		<p>全区文明程度指数测评各项目得分及排名情况：</p>
+		<include file="Common/res_item" />
+
+		<p>未成年人思想道德建设得分：</p>
+		<include file="Common/table_1" />
+
+		<h3>(五)&nbsp;各街道（新城）文明程度指数测评得分极其排名</h3>
+		<p>各街道（新城）文明程度指数测评得分极其排名</p>
+		<include file="Common/res_domain" />
+
+		<h3>(六)&nbsp;各街道（新城）分类项目得分情况表</h3>
+		<p>各街道（新城）分类项目得分情况表</p>
+		<include file="Common/res_domain_item" />
+
+		<h3>(七)&nbsp;未成年人思想道德建设测评的得分极其排名</h3>
+		<p>未成年人思想道德建设测评的得分极其排名：</p>
+		<include file="Common/table_2" />
+
+		<h3>(八)&nbsp;各责任单位文明程度指数测评得分极其排名</h3>
+		<p>各责任单位文明程度指数测评得分极其排名</p>
+		<include file="Common/res_department" />
+	</div>
+</div>
+</body>
+</html>
+
+
+

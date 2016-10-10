@@ -1,0 +1,20 @@
+<table class="table table-border">
+	<thead>
+		<tr>
+			<th width="280" class="text-center">测评项目</th>
+			<th width="150" class="text-center">合计分值</th>
+			<th width="150" class="text-center">合计得分</th>
+			<th width="150" class="text-center">及格率</th>
+		</tr>
+	</thead>	
+	<tbody>
+		<foreach name="result" item="vi">
+		<tr>
+			<td class="text-center">{$vi.res_item}</td>
+			<td class="text-center">{$vi['quota']}</td>
+			<td class="text-center">{$vi['final_score']}</td>
+			<td class="text-center">{$vi['pass_rate']}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>	

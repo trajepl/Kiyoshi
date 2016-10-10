@@ -1,0 +1,43 @@
+<include file="Common/header" title="项目测试" keywords="" description=""/>
+	
+	<link rel="stylesheet" href="__STATIC__/DataTables-1.10.8/css/jquery.dataTables.css">
+	<div id="managers-list">
+		<table class="table table-border">
+			<thead>
+				<tr>
+					<th width="100" class="text-center">责任部门ID</th>
+					<th width="280" class="text-center">责任部门</th>
+					<th width="150" class="text-center">指标分值</th>
+					<th width="150" class="text-center">得分</th>
+					<th width="150" class="text-center">合格率</th>
+					<th width="150" class="text-center">排名</th>
+					<!-- <th width="200" class="text-center">操作</th> -->
+				</tr>
+			</thead>
+			<tbody>
+				<foreach name="result" item="vi">
+					<tr>
+						<if condition="$vi['department'] eq ''">
+						<else />
+							<td class="text-center">{$key}</td>
+							<td class="text-center">{$vi['department']}</td>
+							<td class="text-center">{$vi['quota']}</td>
+							<td class="text-center">{$vi['final_score']}</td>
+							<td class="text-center">{$vi['pass_rate']}</td>
+							<td class="text-center">{$vi['order']}</td>
+							<!-- <td class="text-center">
+								&nbsp;<a class="modify-button"><i class="fa fa-pencil-square-o"></i></a>
+								<a class=" none modify-cancel-button"><i class="fa fa-adjust"></i></a>&nbsp;&nbsp;&nbsp;
+								<a class="none modify-submit-button" item="{$vi['item']}"><i class="fa fa-check"></i></a>&nbsp;
+							</td> -->
+						</if>
+					</tr>
+				</foreach>
+			</tbody>
+		</table>
+	</div>
+
+	<script charset="utf8" src="__STATIC__/DataTables-1.10.8/js/jquery.dataTables.js"></script>
+	<script src="__PUBLIC__/script/resItem.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+	<include file="Common/header" title="数据管理" keywords="" description="" />
+
+	<div id="managers-list">
+		<table class="table table-border">
+			<thead>
+				<tr>
+					<th width="350" class="text-center">id</th>
+					<th width="350" class="text-center">数据表项</th>
+				</tr>
+			</thead>
+			<tbody class="text-center">
+				<foreach name="data" item="vi">
+					<tr>
+						<td>{$vi.id}</td>
+						<td><a href="{:U('Index/dataModify', array('tableName' => $vi['table_name']))}" data-id="{$vi.id}">{$vi.intro}</a></td>
+					</tr>
+				</foreach>
+			</tbody>
+		</table>	
+	</div>
+	<script src="__PUBLIC__/script/admin.js"></script>
+</body>
+</html>

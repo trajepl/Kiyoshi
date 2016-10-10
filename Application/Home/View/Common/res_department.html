@@ -1,0 +1,22 @@
+<table class="table table-border">
+	<thead>
+		<tr>
+			<th width="350" class="text-center">单位</th>
+			<th width="150" class="text-center">指标分值</th>
+			<th width="150" class="text-center">得分</th>
+			<th width="150" class="text-center">及格率</th>
+			<th width="150" class="text-center">排名</th>
+		</tr>
+	</thead>	
+	<tbody>
+		<foreach name="res_department" item="vi">
+		<tr>
+			<td class="text-center">{$vi.department}</td>
+			<td class="text-center">{$vi['quota']}</td>
+			<td class="text-center">{$vi['final_score']}</td>
+			<td class="text-center">{$vi['pass_rate']}</td>
+			<td class="text-center">{$vi['order']}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>	

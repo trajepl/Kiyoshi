@@ -1,3 +1,8 @@
+.navbar-nav>li>a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 17px;
+}
 
 .twopage{
     margin-bottom: 50px;
@@ -17,12 +22,11 @@
 
 .twopage .row{
     margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
 .twopage-books{
     float: left;
+
     background: #ffffff;
     padding: 10px 10px 50px 50px;
     position: relative;
@@ -32,6 +36,7 @@
 .twopage-books a{
     height: 250px;
     float: left;
+
     text-align: center;
     position: relative;
 }
@@ -42,11 +47,13 @@
 }
 
 .bookicon h3{
-    margin-top: 100px;
+    margin-top: 95px;
+    font-size: 30px;
     color: #fff;
 }
 
 .bookicon h1{
+    font-size: 20px;
     color: #a5d2cb;
 }
 
@@ -54,6 +61,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
+
     left: 0;
     top: 0;
     color: #fff;
@@ -63,6 +71,9 @@
 .bookicon:hover{
     background: #122b40;
     opacity: 0.7;
+    -webkit-border-radius: 125px;
+    -moz-border-radius: 125px;
+    border-radius: 125px;
     -webkit-transition: opacity 0.7s;
     -moz-transition: opacity 0.7s;
     -ms-transition: opacity 0.7s;
@@ -115,7 +126,7 @@
     margin-top: 10px;
     margin-left: 15px;
     border: 1px solid #aaa;
-    border-radius: 100%; 
+    border-radius: 100%;
     -webkit-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -276,4 +287,36 @@
 #login-info input[type='reset']:hover {
     background-color: rgb(218, 202, 202);
     color: #fff;
+}
+
+
+.backicon a{
+    height: 60px;
+    position: relative;
+}
+
+.backicon img{
+    height: 60px;
+    width: auto;
+}
+
+.backshadow{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+
+    left: -1.5px;
+    top: -20.3px;
+    color: #fff;
+    opacity: 0;
+}
+
+.backshadow:hover{
+    background: #bdb695;
+    opacity: 0.3;
+    -webkit-transition: opacity 0.7s;
+    -moz-transition: opacity 0.7s;
+    -ms-transition: opacity 0.7s;
+    -o-transition: opacity 0.7s;
+    transition: opacity 0.7s;
 }

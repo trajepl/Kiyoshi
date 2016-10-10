@@ -1,12 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!-- <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>苏州市文明城市建设测评</title>
-<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/Kiyoshi/Public/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/Kiyoshi/Public/css/style.css" /> -->
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -45,10 +37,11 @@
 	<title>苏州文明城市建设测评</title>
 	<!-- <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" /> -->
 	<link rel="stylesheet" href="/Kiyoshi/Public/css/common.css">
-	<link rel="stylesheet" href="/Kiyoshi/Public/css/style.css">
+	<link rel="stylesheet" href="/Kiyoshi/Public/css/admin.css">	
 	<link rel="stylesheet" href="/Kiyoshi/Public/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/Kiyoshi/Static/DataTables-1.10.8/css/jquery.dataTables.css">
 	<link rel="stylesheet" href="/Kiyoshi/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/Kiyoshi/Public/css/style.css">
 	<script type="text/javascript" src="/Kiyoshi/Public/plugins/jquery-1.11.2.js"></script>
 
 </head>
@@ -70,25 +63,31 @@
                 <h4 class="modal-title">增加用户</h4>
             </div>
             <div class="modal-body">
-                <form action="<?php echo U('Index/addUser');?>" method="post">
+                <form action="<?php echo U('Index/addUser');?>" method="post" class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label class="control-label">用户名</label>
-                        <input type="text" class="form-control username" placeholder="用户名称" name="username">
+                        <label class="col-xs-4">用户名</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control username" placeholder="用户名称" name="username">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">用户密码</label>
-                        <input type="password" class="form-control ps1" placeholder="密码" name="password">
+                        <label class="col-xs-4">用户密码</label>
+                        <div class="col-xs-8">
+                            <input type="password" class="form-control ps1" placeholder="密码" name="password">
+                        </div>
                     </div>
-                     <div class="form-group">
-                        <label class="control-label">确认密码</label>
-                        <input type="password" class="form-control ps2" placeholder="密码" name="password_conf">
+                    <div class="form-group">
+                        <label class="col-xs-4">确认密码</label>
+                        <div class="col-xs-8">
+                            <input type="password" class="form-control ps2" placeholder="密码" name="password_conf">
+                        </div>
                     </div>
-                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                        <input type="submit" class="btn btn-primary">
+                    <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <input type="submit" class="btn btn-primary" value="确认">
                     </div>
                 </form>
-            </div> 
+            </div>
         </div>
     </div>
 </div>
@@ -97,7 +96,9 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="myNav">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">苏州文明城市建设测评</a>
+            <a class="navbar-brand" href="#">
+                <img src="/Kiyoshi/Public/images/logo.png">
+            </a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav" id="mytab">
@@ -106,13 +107,6 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="输入你要查找的区">
-                        </div>
-                    </form>
-                </li>
                 <li><a href="<?php echo U('Index/logout');?>">注销</a></li>
                 <?php if($isAdmin == true): ?><li class="admin-item"><a data-toggle="modal" data-target="#myModal">用户增加</a></li>
                 <?php else: ?>
@@ -140,128 +134,34 @@
 </script>>
 
 	<div id="partone">
-    <div id="carousel-example-generic2" class="carousel slide" data-interval="3000" style="margin-bottom: 50px">
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="/Kiyoshi/Public/images/1.jpg">
-                <div class="carousel-caption">
-                    <h3 style="font-size: 40px">吴中区</h3>
-                    <p>测评</p>
-                    <button type="button" class="btn btn-primary" href="#">查看详情</button>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/Kiyoshi/Public/images/2.jpg">
-                <div class="carousel-caption">
-                    <h3 style="font-size: 40px">园区</h3>
-                    <p>测评</p>
-                    <button type="button" class="btn btn-primary" href="#">查看详情</button>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/Kiyoshi/Public/images/3.jpg">
-                <div class="carousel-caption">
-                    <h3 style="font-size: 40px">高新区</h3>
-                    <p>测评</p>
-                    <button type="button" class="btn btn-primary" href="#">查看详情</button>
-                </div>
-            </div>
+    <div class="jumbotron" style="background:url('/Kiyoshi/Public/images/headersz.png');height: 450px;background-size: 100% 100%;-webkit-background-size: 100% 100%;">
+        <div class="jumbotrontext">
+            <img src="/Kiyoshi/Public/images/textsz.png">
         </div>
-
-        <a class="left carousel-control" href="#carousel-example-generic2" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic2" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-    </div>
 </div>
 
-	<div class="twopage" id="twopage">
+	<div class="twopage container" id="twopage">
     <div class="twopage-text">
         <h1 class="twopage-text-h1">
             各区测评情况
         </h1>
     </div>
     <div class="row">
-        <div class="twopage-books col-md-4">
-            <a href="<?php echo U('disone');?>" target="_blank">
-                <img src="/Kiyoshi/Public/images/1.jpg">
-                <div class="bookicon">
-                    <h3>高新区</h3>
-                    <h1><stong>测评</stong></h1>
-                </div>
-            </a>
-        </div>
-        <div class="twopage-books col-md-4">
-            <a href="<?php echo U('disone');?>" target="_blank">
-                <img src="/Kiyoshi/Public/images/1.jpg">
-                <div class="bookicon">
-                    <h3>吴中区</h3>
-                    <h1><stong>测评</stong></h1>
-                </div>
-            </a>
-        </div>
-        <div class="twopage-books col-md-4">
-            <a href="<?php echo U('disone');?>" target="_blank">
-                <img src="/Kiyoshi/Public/images/1.jpg">
-                <div class="bookicon">
-                    <h3>园区</h3>
-                    <h1><stong>测评</stong></h1>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="twopage-books col-md-4">
-            <a href="<?php echo U('disone');?>" target="_blank">
-                <img src="/Kiyoshi/Public/images/1.jpg">
-                <div class="bookicon">
-                    <h3>高新区</h3>
-                    <h1><stong>测评</stong></h1>
-                </div>
-            </a>
-        </div>
-        <div class="twopage-books col-md-4">
-            <a href="<?php echo U('disone');?>" target="_blank">
-                <img src="/Kiyoshi/Public/images/1.jpg">
-                <div class="bookicon">
-                    <h3>吴中区</h3>
-                    <h1><stong>测评</stong></h1>
-                </div>
-            </a>
-        </div>
-        <div class="twopage-books col-md-4">
-            <a href="<?php echo U('disone');?>" target="_blank">
-                <img src="/Kiyoshi/Public/images/1.jpg">
-                <div class="bookicon">
-                    <h3>园区</h3>
-                    <h1><stong>测评</stong></h1>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="twopage-books col-md-4">
-            <a href="<?php echo U('disone');?>" target="_blank">
-                <img src="/Kiyoshi/Public/images/1.jpg">
-                <div class="bookicon">
-                    <h3>高新区</h3>
-                    <h1><stong>测评</stong></h1>
-                </div>
-            </a>
-        </div>
+        <?php if(is_array($zoneInfo)): foreach($zoneInfo as $key=>$vi): ?><div class="twopage-books col-md-4">
+                <a href="<?php echo U('Index/disone', array('id'=>$vi['id']));?>" target="_blank">
+                    <img src="<?php echo ($vi["btn"]); ?>">
+                    <div class="bookicon">
+                        <h3><?php echo ($vi["zone"]); ?></h3>
+                        <h1><strong>测评</strong></h1>
+                    </div>
+                </a>
+            </div><?php endforeach; endif; ?>
     </div>
 </div>
 
-	<nav class="navbar navbar-inverse" role="navigation" style="margin: 0">
+	<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation" id="footer" style="margin-bottom:0px">
     <div style="margin-top: 15px">
-        <h5 style="text-align: center; color: #8e8e8e;">@苏州大学</h5>
+        <h5 style="text-align: center; color: #8e8e8e;">@苏州大学管理学院公共服务中心</h5>
     </div>
 </nav>
 

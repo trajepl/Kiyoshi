@@ -378,6 +378,7 @@ table th {
     border-right: none;
 }
 .table tbody td {
+    text-align: center;
     padding: 8px;
     font-size: 13px;
     white-space: normal;

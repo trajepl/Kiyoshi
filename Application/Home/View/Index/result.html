@@ -1,0 +1,120 @@
+<include file="Common/header" title="测评结果" keywords="测评" description=""/>
+<include file="Common/top"/>
+
+<div class="main-container">
+	<nav id="admin-sidebar" class="side-bar">
+		<ul class="nav-list">
+			<li class="nav-list-item">
+				<a>
+					<i class="fa fa-tasks"></i>
+					<span>测评结果</span>
+					<i class="fa fa-angle-right fr"></i>
+				</a>
+				<ul class="sub-list">
+					<li>
+						<a href="javascript:openapp('{:U('Index/resItem')}',1,'项目排名')">
+							<i class="fa fa-caret-right"></i>
+							<span>项目排名</span>
+							<i class="fa fa-angle-right fr"></i>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:openapp('{:U('Index/resDomain')}',2,'街道排名')">
+							<i class="fa fa-caret-right"></i>
+							<span>街道排名</span>
+							<i class="fa fa-angle-right fr"></i>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:openapp('{:U('Index/resDepartment')}',3,'责任单位')">
+							<i class="fa fa-caret-right"></i>
+							<span>责任单位</span>
+							<i class="fa fa-angle-right fr"></i>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:openapp('{:U('Index/resDomainItem')}',4,'街道项目对应表')">
+							<i class="fa fa-caret-right"></i>
+							<span>街道项目对应表</span>
+							<i class="fa fa-angle-right fr"></i>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav-list-item">
+				<a>
+					<i class="fa fa-users"></i>
+					<span>报表生成</span>
+					<i class="fa fa-angle-right fr"></i>
+				</a>
+				<ul class="sub-list">
+					<li>
+						<a href="javascript:openapp('{:U('Index/report')}',5,'报表预览')">
+							<i class="fa fa-caret-right"></i>
+							<span>报表预览</span>
+							<i class="fa fa-angle-right fr"></i>
+						</a>
+					</li>
+					<!-- <li>
+						<a href="javascript:openapp('{:U('Index/downloadFile')}',6,'学生列表')">
+							<i class="fa fa-caret-right"></i>
+							<span>报表生成</span>
+							<i class="fa fa-angle-right fr"></i>
+						</a>
+					</li> -->
+					
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="main-content">
+		<div class="tab-nav">
+			<ul class="tab-nav-item">
+				<li class="active" data-id='0'><a data-id='0' href="javascript:openapp('{:U('Index/main')}',0,'主页')">主页</a></li>
+			</ul>
+		</div>
+		<div class="page-content">
+				
+			<link rel="stylesheet" href="__STATIC__/DataTables-1.10.8/css/jquery.dataTables.css">
+			<div id="managers-list">
+				<table class="table table-border">
+					<thead>
+						<tr>
+							<th width="100" class="text-center">序号</th>
+							<th width="150" class="text-center">项目</th>
+							<th width="100" class="text-center">考察点位</th>
+							<th width="100" class="text-center">得分</th>
+							<th width="100" class="text-center">区域</th>
+							<th width="100" class="text-center">责任单位</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="data" item="vi"> 
+						<tr>
+							<td class="text-center">{$vi.id}</td>
+							<td class="text-center">{$vi.item}</td>
+							<td class="text-center">{$vi.point}</td>
+							<td class="text-center">{$vi.get}</td>
+							<td class="text-center">{$vi.domain}</td>
+							<td class="text-center">
+							<assign name="department" value="$vi['department']" />
+							<foreach name="department" item="si">{$si} &nbsp;</foreach>
+							</td>
+						</tr>
+						</foreach>
+					</tbody>
+				</table>
+			</div>
+			<script charset="utf8" src="__STATIC__/DataTables-1.10.8/js/jquery.dataTables.js"></script>
+			<script src="__PUBLIC__/script/resShow.js"></script>
+		</div>
+	</div>
+</div>
+
+	<script src="__PUBLIC__/script/index.js"></script>
+	<script src="__PUBLIC__/script/admin.js"></script>
+
+	</div>
+</body>
+</html>
+

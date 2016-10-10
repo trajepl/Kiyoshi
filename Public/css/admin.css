@@ -1,4 +1,4 @@
-
+#nav-top{
     min-width: 1265px;
     height: 40px;
     background-color: #444;
@@ -127,8 +127,10 @@
     margin-left: 180px;
 }
 .main-container {
-	position: relative;
+    position: absolute;
+    top: 40px;
 }
+
 .page-content {
 	position: relative;
 	overflow: hidden;
